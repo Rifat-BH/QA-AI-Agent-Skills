@@ -1,0 +1,8 @@
+Test Case Description,Objective,Pre-condition,Test Data,Steps,Expected Result,Priority,Status
+Verify user can create a record with only the required fields,"Core create flow (AC-1)","User is logged in with create permission; target organisation selected","Name: QaTest<runId>","1. Open the create form
+2. Fill only the required fields
+3. Click ""Save""","Record is saved, a success message appears, and the record is listed with the entered values",High,Not Executed
+Verify user cannot save when a required field is empty,"Required-field validation (AC-2)","Create form is open","Leave ""Name"" empty","1. Leave ""Name"" empty
+2. Fill the other required fields
+3. Click ""Save""","""Name is required"" appears under the field and the record is not saved",High,Not Executed
+Verify user receives 409 when creating a duplicate key through the API,"Conflict handling (AC-5)","A record with key K already exists","Key: K","1. POST the create request with key K","Response is 409 with a problem body naming the conflicting key; no second record exists",Medium,Not Executed
